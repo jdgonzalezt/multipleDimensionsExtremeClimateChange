@@ -47,25 +47,13 @@ map <- ggplot(data = world) +
   scale_x_continuous(expand = c(0,0))+
   scale_y_continuous(expand = c(0,0))
 
-# Metrics~Damage area -----------------------------------------------------------------
+# Exposure + Damage data -----------------------------------------------------------------
 
-dam_rec <- readRDS("mangrove_recovery_db.rds")
+# Metrics related to droughts, floods, heatwaves and hurricanes
 
-# Selecting four metrics related to droughts, floods, heatwaves and cyclones
-
-dam_rec %>%
-  group_by(longitude,latitude,recovered) %>%
-  summarise(
-    n = n()
-  ) %>%
-  filter(recovered == "YES") %>%
-  ggplot(aes(longitude,latitude,color=n))+
-  geom_point()
-
-load("ree_eb_t2m_djfma.Rdata")
-load(".ree_eb_tp_djfma.Rdata")
-load("ree_eb_ws_djfma.Rdata")
-
+db_t2m_95th <- readRDS("db_t2m_95th.rds")
+db_tp_5th <- readRDS("db_tp_5th.rds")
+db_tp_95th <- readRDS("db_tp_95th.rds")
 
 # Statistical tests -------------------------------------------------------
 
@@ -74,12 +62,6 @@ library(effsize)
 comparisons_df <- data.frame()
 
 # Heatwaves
-
-db_t2m_95th <- dam_rec %>%
-  left_join(ree_eb_95_t2m_djf, 
-            by = c("yr","longitude","latitude")) %>%
-  filter(!is.na(exceedance_no)) %>%
-  as.data.frame()
 
 # Intensity 
 
@@ -201,12 +183,6 @@ comparisons_df <- rbind(comparisons_df,comparisons_vector)
 
 # Droughts
 
-db_tp_5th <- dam_rec %>%
-  left_join(ree_eb_5_tp_dfjma, 
-            by = c("yr","longitude","latitude")) %>%
-  filter(!is.na(exceedance_no)) %>%
-  as.data.frame()
-
 # Intensity 
 
 wt <- wilcox.test(
@@ -323,13 +299,7 @@ comparisons_vector <- data.frame(
 
 comparisons_df <- rbind(comparisons_df,comparisons_vector)
 
-# high precipitation
-
-db_tp_95th <- dam_rec %>%
-  left_join(ree_eb_95_tp_dfjma, 
-            by = c("yr","longitude","latitude")) %>%
-  filter(!is.na(exceedance_no)) %>%
-  as.data.frame()
+# heavy rainfall
 
 # Intensity 
 
