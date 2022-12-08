@@ -14,7 +14,7 @@ library(colorspace)
 # PCA ---------------------------------------------------------------------
 
 # Uploading the database
-rbm_metrics_db <- readRDS("metrics_jul2022/RB_metrics_db.RDS")
+rbm_metrics_db <- readRDS("RB_metrics_db.RDS")
 ## 89 metrics for three climatic parameters
 
 # Standardizing variables: mean 0 SD 1
