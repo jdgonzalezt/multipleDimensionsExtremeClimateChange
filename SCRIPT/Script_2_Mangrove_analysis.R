@@ -62,9 +62,9 @@ dam_rec %>%
   ggplot(aes(longitude,latitude,color=n))+
   geom_point()
 
-load("./metrics_jul2022/ree_eb_t2m_djfma.Rdata")
-load("./metrics_jul2022/ree_eb_tp_djfma.Rdata")
-load("./metrics_jul2022/ree_eb_ws_djfma.Rdata")
+load("ree_eb_t2m_djfma.Rdata")
+load(".ree_eb_tp_djfma.Rdata")
+load("ree_eb_ws_djfma.Rdata")
 
 
 # Statistical tests -------------------------------------------------------
