@@ -13,4 +13,4 @@ This repository contains data, code and dynamic figures to reproduce the analyse
 3. FIGURES: contains a dynamical representation of a set of metrics computed in a yearly basis (long-term series). Exposure values per grid cell are plotted by year and season in GIFs. Please refer to table 1 in the main text for further information on metric's properties and computation.
 
 
-v.1.0. December 2022
+v.1.0. December 2022 - Juan David González-Trujillo
