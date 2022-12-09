@@ -1,6 +1,6 @@
 # Supporting data and code
 ## Multiple dimensions of extreme weather events and their impacts on biodiversity
-## González-Trujillo et al. 
+### González-Trujillo et al. 
 
 The repository contains data, code and dynamic figures to reproduce the analysis of 
 González-Trujillo et al. 
