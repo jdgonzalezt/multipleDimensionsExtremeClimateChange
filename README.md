@@ -10,4 +10,4 @@ the metrics used in the case study (mangrove recovery).
 Code is on the folder SCRIPT. It contains R scripts for conducting the analysis and figures included in the paper. 
 
 Figures are on the folder FIGURES. It contains dynamical representations of the metrics. Exposure values per grid cell are plotted by
-year and season. 
+year and season. Please refer to table 1 in the main text for further information on metric's properties and computation.
